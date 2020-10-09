@@ -2,23 +2,34 @@
 
 #### 相识极速版是相识的加速版本。
 
-## 相识极速版只是相识的阉割 + 极速版，正式版本请到
-## https://pypi.org/project/xiangshi/
+### 相识极速版现已并入相识，具体信息请到：
+### https://github.com/kiwirafe/xiangshi/tree/master/xiangshi/fast
 
+### 相识极速版只是相识的阉割 + 极速版，正式版本请到
+### https://github.com/kiwirafe/xiangshi
 相识与极速版的比较：
 ```
-功能          | 相识       | 相识极速版
-Cossim        | ✅        | ✅
-Simhash       | ✅        | ❌
-Minhash       | ✅        | ❌
-GetTF         | ✅        | ✅
-GetIDF        | ✅        | ✅
-GetTFIDF      | ✅        | ✅
-input2list    | ✅        | ✅
-dict2file     | ✅        | ❌
-SortDict      | ✅        | ❌
-HashString    | ✅        | ❌
-Logging       | ✅        | ❌
+Functions       | Xiangshi     | XiangshiFast 
+Cossim          | ✅           | ✅
+Simhash         | ✅           | ❌
+Minhash         | ✅           | ❌
+
+GetTF           | ✅           | ✅
+GetIDF          | ✅           | ✅
+GetTFIDF        | ✅           | ✅
+
+Stop Words      | ✅           | ✅
+input2list      | ✅           | ✅
+dict2file       | ✅           | ❌
+SortDict        | ✅           | ❌
+Logging         | ✅           | ❌
+Choose TF/TFIDF | ✅           | ❌
+
+File Input      | ✅           | ✅
+List Input      | ✅           | ❌
+String Input    | Projected    | ❌
+
+Speed           | 10 ~ 15s     | 5 ~ 7s
 ```
 
 ### 下载与安装
@@ -29,11 +40,8 @@ $ pip3 install XiangshiFast
 ### 使用方法
 ##### 计算文本相似度
 ```py
-import xiangshifast as xsf
+from xiangshi import fast as xsf
 xsf.cossim(Input1, Input2):
-# 或以下代码可以无缝连接
-import xiangshifast as xs
-xs.cossim(Input1, Input2):
 ```
  - 计算文本相似度时自动由TFIDF过滤
  - Input1 - 第一个输入值，可以是文件的地址或是一个列表
